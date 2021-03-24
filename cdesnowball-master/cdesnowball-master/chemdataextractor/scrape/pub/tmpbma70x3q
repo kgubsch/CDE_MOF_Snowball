@@ -21,7 +21,7 @@ import six
 
 from chemdataextractor.text.processors import Substitutor, Discard, Chain, LStrip, RStrip, LAdd
 from chemdataextractor.text.normalize import normalize
-from .. import BLOCK_ELEMENTS
+from chemdataextractor.scrape.__init__ import BLOCK_ELEMENTS
 from chemdataextractor.scrape.clean import Cleaner, clean
 from chemdataextractor.scrape.entity import Entity, DocumentEntity
 from chemdataextractor.scrape.fields import StringField, EntityField, UrlField
@@ -346,9 +346,8 @@ class RscSearchScraper(SearchScraper):
         selector = Selector.from_html(response)
         sessionkey = selector.css('#SearchTerm::attr("value")').extract()[0]
         searchdata = {'searchterm': sessionkey, 'resultcount': 100, 'category': 'journal', 'pageno': page}
-        response = self.http.post('http://pubs.rsc.org/en/search/journalresult', data=searchdata, headers=headers)
+        response2 = self.http.post('http://pubs.rsc.org/en/search/journalresult', data=searchdata, headers=headers)
         return response
-
 
 
 class RscLandingSupplement(Entity):

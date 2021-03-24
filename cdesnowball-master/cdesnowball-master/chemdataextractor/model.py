@@ -396,7 +396,10 @@ class CurieTemperature(BaseModel):
     value = StringType()
     units = StringType(contextual=True)
     confidence = StringType()
-
+    
+class Topology(BaseModel):
+    full = StringType() 
+    abrv = StringType(contextual = True)
 
 class GlassTransition(BaseModel):
     """A glass transition temperature."""

@@ -28,13 +28,13 @@ INLINE_ELEMENTS = {
 }
 
 
-from .clean import Cleaner, clean, clean_html, clean_markup
-from .entity import Entity, EntityList, DocumentEntity
-from .fields import StringField, IntField, FloatField, BoolField, DateTimeField, EntityField, UrlField
-from .scraper import HtmlFormat, XmlFormat, GetRequester, PostRequester, UrlScraper, RssScraper, SearchScraper
-from .selector import Selector, SelectorList
-from .pub.nlm import NlmXmlDocument
-from .pub.elsevier import ElsevierHtmlDocument
-from .pub.acs import AcsHtmlDocument
-from .pub.rsc import RscHtmlDocument
-from .pub.springer import SpringerXmlDocument
+from chemdataextractor.scrape.clean import Cleaner, clean, clean_html, clean_markup
+from chemdataextractor.scrape.entity import Entity, EntityList, DocumentEntity
+from chemdataextractor.scrape.fields import StringField, IntField, FloatField, BoolField, DateTimeField, EntityField, UrlField
+from chemdataextractor.scrape.scraper import HtmlFormat, XmlFormat, GetRequester, PostRequester, UrlScraper, RssScraper, SearchScraper
+from chemdataextractor.scrape.selector import Selector, SelectorList
+from chemdataextractor.scrape.pub.nlm import NlmXmlDocument
+from chemdataextractor.scrape.pub.elsevier import ElsevierHtmlDocument
+from chemdataextractor.scrape.pub.acs import AcsHtmlDocument
+from chemdataextractor.scrape.pub.rsc import RscHtmlDocument
+from chemdataextractor.scrape.pub.springer import SpringerXmlDocument

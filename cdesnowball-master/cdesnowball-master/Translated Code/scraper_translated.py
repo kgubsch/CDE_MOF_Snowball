@@ -42,7 +42,7 @@ class XmlFormat(BaseFormat):
 
 class GetRequester(BaseRequester):
 
-    def make_request(self, session, url, **kwargs): #keyword arguments 
+    def make_request(self, session, url, **kwargs):
         """Make a HTTP GET request.
 
         :param url: The URL to get.
@@ -108,6 +108,22 @@ class SearchScraper(GetRequester, HtmlFormat, BaseScraper):
         """Override to filter or process input query prior to making request."""
         return query
 
+
+        """A decorator indicating abstract methods.
+
+    Requires that the metaclass is ABCMeta or derived from it.  A
+    class that has a metaclass derived from ABCMeta cannot be
+    instantiated unless all of its abstract methods are overridden.
+    The abstract methods can be called using any of the normal
+    'super' call mechanisms.
+
+    Usage:
+
+        class C(metaclass=ABCMeta):
+            @abstractmethod
+            def my_abstract_method(self, ...):
+                ...
+    """
     @abstractmethod
     def perform_search(self, query, page):
         """Override to implement search. Take query input and return a response."""

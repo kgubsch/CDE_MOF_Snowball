@@ -18,27 +18,27 @@ import re
 
 import six
 
-from ..model import ModelList, Compound, NeelTemperature, CurieTemperature
-from ..parse.context import ContextParser
-from ..parse.cem import ChemicalLabelParser, CompoundHeadingParser, CompoundParser, chemical_name
-from ..parse.table import CaptionContextParser
-from ..parse.ir import IrParser
-from ..parse.mp import MpParser
-from ..parse.neel import NtParser
-from ..parse.curie import CtParser
-from ..parse.tg import TgParser
-from ..parse.nmr import NmrParser
-from ..parse.uvvis import UvvisParser
+from chemdataextractor.model import ModelList, Compound, NeelTemperature, CurieTemperature
+from chemdataextractor.parse.context import ContextParser
+from chemdataextractor.parse.cem import ChemicalLabelParser, CompoundHeadingParser, CompoundParser, chemical_name
+from chemdataextractor.parse.table import CaptionContextParser
+from chemdataextractor.parse.ir import IrParser
+from chemdataextractor.parse.mp import MpParser
+from chemdataextractor.parse.neel import NtParser
+from chemdataextractor.parse.curie import CtParser
+from chemdataextractor.parse.tg import TgParser
+from chemdataextractor.parse.nmr import NmrParser
+from chemdataextractor.parse.uvvis import UvvisParser
 
-from ..nlp.lexicon import ChemLexicon
-from ..nlp.cem import CemTagger, IGNORE_PREFIX, IGNORE_SUFFIX, SPECIALS, SPLITS
-from ..nlp.abbrev import ChemAbbreviationDetector
-from ..nlp.tag import NoneTagger
-from ..nlp.pos import ChemCrfPosTagger
-from ..nlp.tokenize import ChemSentenceTokenizer, ChemWordTokenizer, regex_span_tokenize
-from ..text import CONTROL_RE
-from ..utils import memoized_property, python_2_unicode_compatible
-from .element import BaseElement
+from chemdataextractor.nlp.lexicon import ChemLexicon
+from chemdataextractor.nlp.cem import CemTagger, IGNORE_PREFIX, IGNORE_SUFFIX, SPECIALS, SPLITS
+from chemdataextractor.nlp.abbrev import ChemAbbreviationDetector
+from chemdataextractor.nlp.tag import NoneTagger
+from chemdataextractor.nlp.pos import ChemCrfPosTagger
+from chemdataextractor.nlp.tokenize import ChemSentenceTokenizer, ChemWordTokenizer, regex_span_tokenize
+from chemdataextractor.text import CONTROL_RE
+from chemdataextractor.utils import memoized_property, python_2_unicode_compatible
+from chemdataextractor.doc.element import BaseElement
 
 
 log = logging.getLogger(__name__)

@@ -13,13 +13,13 @@ from __future__ import unicode_literals
 import logging
 import re
 
-from .cem import cem, chemical_label, lenient_chemical_label, solvent_name
-from .common import lbrct, dt, rbrct
-from ..utils import first, last
-from ..model import Compound, NeelTemperature
-from .actions import merge, join
-from .base import BaseParser
-from .elements import W, I, R, T, Optional, Any, OneOrMore, Not, ZeroOrMore, Group
+from chemdataextractor.parse.cem import cem, chemical_label, lenient_chemical_label, solvent_name
+from chemdataextractor.parse.common import lbrct, dt, rbrct
+from chemdataextractor.utils import first, last
+from chemdataextractor.model import Compound, NeelTemperature
+from chemdataextractor.parse.actions import merge, join
+from chemdataextractor.parse.base import BaseParser
+from chemdataextractor.parse.elements import W, I, R, T, Optional, Any, OneOrMore, Not, ZeroOrMore, Group
 
 from lxml import etree
 

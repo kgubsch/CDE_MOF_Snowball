@@ -20,14 +20,14 @@ import logging
 
 import six
 
-from ..utils import python_2_unicode_compatible
-from .text import Paragraph, Citation, Footnote, Heading, Title
-from .table import Table
-from .figure import Figure
-from ..errors import ReaderError
-from ..model import ModelList, StringType
-from ..text import get_encoding
-from .element import CaptionedElement
+from chemdataextractor.utils import python_2_unicode_compatible
+from chemdataextractor.doc.text import Paragraph, Citation, Footnote, Heading, Title
+from chemdataextractor.doc.table import Table
+from chemdataextractor.doc.figure import Figure
+from chemdataextractor.errors import ReaderError
+from chemdataextractor.model import ModelList, StringType
+from chemdataextractor.text import get_encoding
+from chemdataextractor.doc.element import CaptionedElement
 
 log = logging.getLogger(__name__)
 

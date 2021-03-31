@@ -29,6 +29,7 @@ from chemdataextractor.parse.curie import CtParser
 from chemdataextractor.parse.tg import TgParser
 from chemdataextractor.parse.nmr import NmrParser
 from chemdataextractor.parse.uvvis import UvvisParser
+from chemdataextractor.parse.linker import LinkerParser
 
 from chemdataextractor.nlp.lexicon import ChemLexicon
 from chemdataextractor.nlp.cem import CemTagger, IGNORE_PREFIX, IGNORE_SUFFIX, SPECIALS, SPLITS
@@ -268,8 +269,8 @@ class Heading(Text):
 
 
 class Paragraph(Text):
-    parsers = [CompoundParser(), ChemicalLabelParser(), CtParser(), NtParser(), ContextParser()]
-    #parsers = [InternalCompoundLabelParser(), CompoundParser(), ChemicalLabelParser(), NmrParser(), IrParser(), UvvisParser(), MpParser(), NtParser(), CtParser(), TgParser(), ContextParser()]
+    #parsers = [CompoundParser(), ChemicalLabelParser(), CtParser(), NtParser(), ContextParser()]
+    parsers = [CompoundParser(), ChemicalLabelParser(), NmrParser(), IrParser(), UvvisParser(), MpParser(), NtParser(), CtParser(), TgParser(), ContextParser(), LinkerParser()]
 
     def _repr_html_(self):
         return '<p class="cde-paragraph">' + self.text + '</p>'

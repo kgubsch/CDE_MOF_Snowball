@@ -343,9 +343,10 @@ class RscSearchScraper(SearchScraper):
         log.debug('Processing query: %s' % query)
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0'}
         response = self.http.get('http://pubs.rsc.org/en/results', params={'searchtext': query, 'SortBy': 'Relevance', 'PageSize': 100}, headers=headers)
+        print(response) #added to see if it works and it does
         selector = Selector.from_html(response)
         sessionkey = selector.css('#SearchTerm::attr("value")').extract()[0]
-        searchdata = {'searchterm': sessionkey, 'resultcount': 100, 'category': 'journal', 'pageno': page}
+        searchdata = {'searchterm': sessionkey, 'resultcount': 100, 'category': 'journal', 'pageno': page} #this is where the software is getting tripped up
         response = self.http.post('http://pubs.rsc.org/en/search/journalresult', data=searchdata, headers=headers)
         return response
 

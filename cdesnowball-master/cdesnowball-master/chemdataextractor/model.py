@@ -490,6 +490,10 @@ class ElectrochemicalPotential(BaseModel):
     temperature_units = StringType(contextual=True)
     apparatus = StringType(contextual=True)
 
+class LinkerYield(BaseModel):
+    yield_value = StringType()
+    units = StringType(contextual=True)
+
 class Figure(BaseModel):
     label = StringType()
     plot_type = StringType()
@@ -515,6 +519,7 @@ class Compound(BaseModel):
     quantum_yields = ListType(ModelType(QuantumYield))
     fluorescence_lifetimes = ListType(ModelType(FluorescenceLifetime))
     electrochemical_potentials = ListType(ModelType(ElectrochemicalPotential))
+    linkers = ListType(ModelType(LinkerYield))
 
     def merge(self, other):
         """Merge data from another Compound into this Compound."""
